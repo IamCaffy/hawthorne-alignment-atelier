@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Explore the complete Hawthorne 81-point D&D alignment framework: an interactive 9×9 grid and all 18 Lawfulness and Goodness classifications.">
+<title>Explore the 81-Point Alignment Framework | Hawthorne Alignment Atelier</title>
+<style>
+:root{color-scheme:light;--ink:#203426;--green:#28533b;--gold:#927748;--border:#b8a276;--paper:#fff9e8}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font:18px/1.64 Georgia,'Times New Roman',serif;background:#e8dfc7;background-image:radial-gradient(#fff7df 1px,transparent 1px);background-size:7px 7px}
+main{width:min(1100px,calc(100% - 32px));margin:35px auto;padding:44px clamp(18px,4.5vw,56px);border:4px double #907b4c;background:linear-gradient(145deg,#fff9e8,#f0e2c4);box-shadow:0 10px 30px #564a342b}
+header{text-align:center;border-bottom:2px solid #aa925f;padding-bottom:23px}
+header .mark{font-size:32px;color:#8a6b37}
+h1{font-size:clamp(29px,4.5vw,48px);line-height:1.12;margin:8px 0;color:#1d3627;font-variant:small-caps}
+h2{font-variant:small-caps;color:#294830;font-size:clamp(24px,3vw,32px);margin:34px 0 10px;line-height:1.2}
+h3{color:#294830;font-size:22px;margin:22px 0 8px}
+p{margin:9px 0 16px}a{color:#28533b;text-underline-offset:3px}
+nav{display:flex;justify-content:center;gap:10px 22px;flex-wrap:wrap;margin-top:22px}nav a{font-weight:bold}
+.lede{text-align:center;font-size:21px;max-width:830px;margin:25px auto 14px}
+.kicker{color:#735e37;letter-spacing:.12em;text-transform:uppercase;font-weight:bold;font-size:12px}
+.dual{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.note{background:#faf1db;border:1px solid #c7b187;border-radius:4px;padding:16px 18px}
+.note strong{color:#214931}.note p:last-child{margin-bottom:0}
+.explorer{display:grid;grid-template-columns:minmax(0,630px) minmax(235px,1fr);align-items:center;gap:22px;margin:22px 0}
+.grid-wrap{width:100%;max-width:630px;margin:auto}
+.y-axis-label{text-align:center;font-size:15px;font-weight:bold;margin-bottom:6px}
+.grid-row{display:grid;grid-template-columns:26px minmax(0,1fr);gap:5px}
+.ynums{display:grid;grid-template-rows:repeat(9,1fr);text-align:center;font-weight:bold;font-size:15px;color:#43513f;align-items:center}
+.board{aspect-ratio:1;position:relative;border:2px solid #564d3b;box-shadow:inset 0 0 0 1px #ded0ac;background:#d1c6ae}
+.regions{position:absolute;inset:0;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);z-index:0}
+.region{border-right:1.5px solid #625b4a;border-bottom:1.5px solid #625b4a;display:flex;align-items:flex-start;justify-content:center;text-align:center;padding:8px 2px 0;line-height:1.16;font-size:clamp(10px,1.5vw,15px);font-weight:bold;color:#263428}
+.region.good.chaotic{background:#b3c8cf}.region.good.neutral{background:#bbceaf}.region.good.lawful{background:#c8cda0}
+.region.mid.chaotic{background:#c4bbc5}.region.mid.neutral{background:#d5c9b4}.region.mid.lawful{background:#e1c793}
+.region.evil.chaotic{background:#c98580}.region.evil.neutral{background:#d7a099}.region.evil.lawful{background:#cd947c}
+.tiles{position:absolute;inset:0;display:grid;grid-template-columns:repeat(9,1fr);grid-template-rows:repeat(9,1fr);z-index:1}
+.cell{appearance:none;cursor:pointer;border:0;border-right:1px solid #635e514d;border-bottom:1px solid #635e514d;background:transparent;color:#1d3627;position:relative;padding:0;transition:background .12s}
+.cell:hover{background:#fff9cd63}.cell:focus-visible{outline:3px solid #244d36;outline-offset:-3px;z-index:3}
+.cell.selected:before{content:"";position:absolute;inset:8%;border-radius:50%;background:#f7d77f;box-shadow:0 0 0 2px #9a6b26,0 2px 6px #0005}
+.cell.selected:after{content:"✦";color:#273b28;position:absolute;left:50%;top:49%;transform:translate(-50%,-50%);font-size:clamp(16px,3vw,26px);line-height:1}
+.xnums{display:grid;grid-template-columns:repeat(9,1fr);margin-left:31px;text-align:center;color:#43513f;font-size:15px;font-weight:bold}
+.x-axis-label{text-align:center;font-size:15px;font-weight:bold;margin:3px 0 0 31px}
+.result{padding:18px;border:2px solid #a89061;border-radius:4px;background:#fff8e4;min-height:290px}
+.result .coords{font-size:clamp(32px,4vw,45px);line-height:1.2;color:#203e2d;font-weight:bold}
+.result h3{margin:4px 0 10px;font-size:23px}
+.result .axis{border-top:1px solid #d4c29a;padding:9px 0;font-size:16px;line-height:1.4}
+.result .axis strong{display:block;color:#244d36}
+.result .axis small{display:block;font-size:15px;color:#474633}
+.result .region-name{font-weight:bold;font-size:18px;margin-bottom:9px}
+.examples{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 16px}
+button.example{cursor:pointer;background:#f9efda;border:1px solid #af9563;color:#254633;padding:8px 10px;border-radius:5px;font:16px Georgia,'Times New Roman',serif}
+button.example:hover{background:#eee0bd}
+.inline-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:10px}
+#share{background:#2e593e;color:#fff9e8;border:1px solid #2e593e;border-radius:5px;padding:8px 13px;font:16px Georgia,serif;cursor:pointer}
+#share:hover{background:#234630}.status{font-size:14px;color:#314c39;min-height:20px}
+.definitions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px;margin-top:18px}
+.definitions h3{margin-top:0}.scale-list{list-style:none;margin:0;padding:0}
+.scale-list li{display:flex;gap:10px;border-bottom:1px solid #d3c49d;padding:11px 0;line-height:1.35}
+.scale-list li:last-child{border-bottom:none}
+.scale-list .score{font-weight:bold;min-width:30px;height:30px;border-radius:50%;text-align:center;line-height:30px;background:#decba0;color:#233928;font-size:16px}
+.scale-list strong{font-size:18px;color:#234630}.scale-list p{font-size:15.5px;margin:3px 0;color:#403f34}
+.instructions{max-width:920px}.instructions ol{padding-left:26px}.instructions li{padding:3px 0}
+footer{border-top:1px solid #b6a078;margin-top:35px;padding-top:20px;text-align:center;font-size:15px}
+@media(max-width:890px){.explorer{grid-template-columns:minmax(0,1fr)}.result{min-height:unset}}
+@media(max-width:620px){main{width:calc(100% - 16px);margin:8px auto;padding:18px 10px}.dual,.definitions{grid-template-columns:1fr}.region{font-size:11px;padding-top:4px}.y-axis-label,.x-axis-label{font-size:13px}.ynums,.xnums{font-size:12px}.board{width:100%}.grid-row{grid-template-columns:20px minmax(0,1fr);gap:3px}.xnums{margin-left:23px}.x-axis-label{margin-left:23px}.cell.selected:after{font-size:18px}nav{gap:8px 14px}.region{line-height:1.1}}
+@media print{body{background:#fff}main{border:none;box-shadow:none;margin:0;width:100%}nav,.examples,.inline-actions{display:none}.explorer{grid-template-columns:minmax(0,1fr)}.board{max-width:450px}.definitions{break-before:page}.note,.result{break-inside:avoid}}
+</style>
+</head>
+<body>
+<main>
+<header>
+<div class="mark" aria-hidden="true">✥</div>
+<div class="kicker">People · Principles · Possibilities</div>
+<h1>The 81-Point Alignment Framework</h1>
+<p>A Hawthorne Alignment Atelier reference for Dungeons &amp; Dragons roleplay</p>
+<nav aria-label="Site navigation"><a href="./">Home</a><a href="framework.html" aria-current="page">Alignment Framework</a><a href="privacy.html">Privacy Policy</a><a href="support.html">Support</a><a href="terms.html">Terms</a></nav>
+</header>
+<p class="lede">Alignment is a starting point for understanding your character—not a rule that determines what they must do next.</p>
+<div class="dual">
+<section class="note"><strong>Lawfulness · X axis</strong><p>How consistently does your character follow a personal code of conduct? This is <em>not</em> simply obedience to laws, orders, or institutions.</p></section>
+<section class="note"><strong>Goodness · Y axis</strong><p>How much does your character genuinely consider others’ welfare, dignity, and autonomy? Their choices and consequences matter as well as their intentions.</p></section>
+</div>
+<h2 id="explore">Explore the alignment grid</h2>
+<p>Select any square to see its two classifications and traditional D&amp;D alignment. Coordinates are always written <strong>(Lawfulness, Goodness)</strong>. The grid is a reference, not an automated moral judgment.</p>
+<div class="examples" aria-label="Example alignments">
+<button class="example" type="button" data-x="4" data-y="7">(4, 7) · Flexible / Compassionate</button>
+<button class="example" type="button" data-x="8" data-y="3">(8, 3) · Unwavering / Exploitative</button>
+<button class="example" type="button" data-x="7" data-y="8">(7, 8) · Disciplined / Altruistic</button>
+<button class="example" type="button" data-x="5" data-y="5">(5, 5) · Balanced / Indifferent</button>
+</div>
+<div class="explorer">
+<div class="grid-wrap">
+<div class="y-axis-label">Goodness ↑ — Concern for others</div>
+<div class="grid-row"><div class="ynums" aria-hidden="true"><span>9</span><span>8</span><span>7</span><span>6</span><span>5</span><span>4</span><span>3</span><span>2</span><span>1</span></div>
+<div class="board" aria-label="Interactive 9 by 9 alignment grid">
+<div class="regions" aria-hidden="true">
+<div class="region good chaotic">Chaotic<br>Good</div><div class="region good neutral">Neutral<br>Good</div><div class="region good lawful">Lawful<br>Good</div>
+<div class="region mid chaotic">Chaotic<br>Neutral</div><div class="region mid neutral">True<br>Neutral</div><div class="region mid lawful">Lawful<br>Neutral</div>
+<div class="region evil chaotic">Chaotic<br>Evil</div><div class="region evil neutral">Neutral<br>Evil</div><div class="region evil lawful">Lawful<br>Evil</div>
+</div>
+<div class="tiles" id="alignment-grid" role="group" aria-label="Choose alignment coordinates"></div>
+</div></div>
+<div class="xnums" aria-hidden="true"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span></div>
+<div class="x-axis-label">Lawfulness → — Commitment to a personal code</div>
+</div>
+<section class="result" aria-live="polite" aria-atomic="true" aria-label="Selected alignment">
+<div class="kicker">Selected coordinates</div>
+<div id="coordinates" class="coords">(5, 5)</div>
+<h3 id="labels">Balanced / Indifferent</h3>
+<div class="region-name" id="traditional">True Neutral</div>
+<div class="axis"><strong id="lawful-title">Lawfulness 5 · Balanced</strong><small id="lawful-desc"></small></div>
+<div class="axis"><strong id="good-title">Goodness 5 · Indifferent</strong><small id="good-desc"></small></div>
+<div class="inline-actions"><button id="share" type="button">Copy link to this alignment</button><span id="share-status" class="status" role="status"></span></div>
+</section>
+</div>
+<noscript><p class="note">The interactive grid requires JavaScript. All eighteen classification definitions remain available below.</p></noscript>
+<h2 id="definitions">The eighteen classifications</h2>
+<p>Each point is a distinct descriptive classification, not merely a subdivision of the traditional nine alignments. These descriptions are the Atelier's fixed reference definitions.</p>
+<div class="definitions">
+<section><h3>Lawfulness · 1 to 9</h3><ol class="scale-list"><li><span class="score">1</span><div><strong>Unrestrained</strong><p>Governed primarily by immediate desires and circumstances, with little commitment to consistent principles.</p></div></li>
+<li><span class="score">2</span><div><strong>Impulsive</strong><p>Personal desires routinely override previously established beliefs and commitments.</p></div></li>
+<li><span class="score">3</span><div><strong>Inconsistent</strong><p>Has recognizable principles but frequently abandons them when inconvenient.</p></div></li>
+<li><span class="score">4</span><div><strong>Flexible</strong><p>Maintains principles but readily makes exceptions based on changing circumstances.</p></div></li>
+<li><span class="score">5</span><div><strong>Balanced</strong><p>Gives relatively equal weight to personal principles and situational judgment.</p></div></li>
+<li><span class="score">6</span><div><strong>Dependable</strong><p>Generally follows established principles, making exceptions when sufficiently justified.</p></div></li>
+<li><span class="score">7</span><div><strong>Disciplined</strong><p>Has a well-established personal code and follows it even when inconvenient.</p></div></li>
+<li><span class="score">8</span><div><strong>Unwavering</strong><p>Rarely compromises personal principles, even when substantial sacrifices are required.</p></div></li>
+<li><span class="score">9</span><div><strong>Absolute</strong><p>Follows a clearly defined personal code regardless of personal consequences, temptation, or external pressure.</p></div></li></ol></section>
+<section><h3>Goodness · 1 to 9</h3><ol class="scale-list"><li><span class="score">1</span><div><strong>Malevolent</strong><p>Deliberately seeks to cause harm, suffering, or destruction.</p></div></li>
+<li><span class="score">2</span><div><strong>Cruel</strong><p>Readily harms, manipulates, or exploits others with little remorse.</p></div></li>
+<li><span class="score">3</span><div><strong>Exploitative</strong><p>Consistently prioritizes personal gain over others’ welfare even when significant harm results.</p></div></li>
+<li><span class="score">4</span><div><strong>Self-Serving</strong><p>Primarily concerned with personal interests but generally avoids unnecessary harm.</p></div></li>
+<li><span class="score">5</span><div><strong>Indifferent</strong><p>Neither consistently prioritizes nor disregards the well-being of others.</p></div></li>
+<li><span class="score">6</span><div><strong>Considerate</strong><p>Generally respects others’ welfare and helps when personal costs are reasonable.</p></div></li>
+<li><span class="score">7</span><div><strong>Compassionate</strong><p>Actively helps others and prevents suffering, even when meaningful personal sacrifice is required.</p></div></li>
+<li><span class="score">8</span><div><strong>Altruistic</strong><p>Consistently prioritizes others’ welfare and willingly accepts considerable personal sacrifice.</p></div></li>
+<li><span class="score">9</span><div><strong>Selfless</strong><p>Demonstrates extraordinary commitment to others’ well-being, even at tremendous personal cost.</p></div></li></ol></section>
+</div>
+<h2>How the traditional nine alignments fit</h2>
+<div class="dual"><section class="note"><strong>Lawfulness bands</strong><p>1–3: Chaotic<br>4–6: Neutral<br>7–9: Lawful</p></section><section class="note"><strong>Goodness bands</strong><p>1–3: Evil<br>4–6: Neutral<br>7–9: Good</p></section></div>
+<p>For example, <strong>(4, 7)</strong> means <em>Flexible / Compassionate</em>, traditionally <em>Neutral Good</em>. A <strong>(8, 3)</strong> character is <em>Unwavering / Exploitative</em>, traditionally <em>Lawful Evil</em>. Following a consistent code says nothing by itself about whether that code is kind.</p>
+<h2>Using the framework to deepen roleplay</h2>
+<div class="instructions">
+<ol>
+<li><strong>Start with who your character is.</strong> Consider their personality, ideals, flaws, bonds, backstory, and actual choices during adventures.</li>
+<li><strong>Look at both dimensions separately.</strong> Commitment to a personal code is not the same as obedience to authority. Caring deeply about close friends is not automatically the same as putting strangers first.</li>
+<li><strong>Consider hard choices.</strong> What happens when a promise conflicts with compassion? When a reward conflicts with someone else's safety? Do they follow a stable hierarchy of principles?</li>
+<li><strong>Choose a provisional coordinate.</strong> Let decisions in actual play confirm or change it. A single regretted action can matter without defining a character forever.</li>
+<li><strong>Use it as a roleplay guide, not a constraint.</strong> Alignment describes a character's current tendencies. The player decides what the character does next.</li>
+</ol>
+</div>
+<section class="note"><strong>About the poster generator</strong><p>The Hawthorne Alignment Atelier ChatGPT plugin provides guided character assessment and personalized parchment posters. Its public listing is not yet available. This reference website works independently; it does not submit character information or generate posters.</p></section>
+<footer><a href="./">Home</a> · <a href="privacy.html">Privacy Policy</a> · <a href="support.html">Support &amp; Contact</a> · <a href="terms.html">Terms of Service</a>
+<p>Hawthorne Alignment Atelier · Published by Papalote G Sunshinekisser · Independent fan-made D&amp;D roleplay resource.</p></footer>
+</main>
+<script>
+"use strict";
+const lawful = [{"title": "Unrestrained", "desc": "Governed primarily by immediate desires and circumstances, with little commitment to consistent principles."}, {"title": "Impulsive", "desc": "Personal desires routinely override previously established beliefs and commitments."}, {"title": "Inconsistent", "desc": "Has recognizable principles but frequently abandons them when inconvenient."}, {"title": "Flexible", "desc": "Maintains principles but readily makes exceptions based on changing circumstances."}, {"title": "Balanced", "desc": "Gives relatively equal weight to personal principles and situational judgment."}, {"title": "Dependable", "desc": "Generally follows established principles, making exceptions when sufficiently justified."}, {"title": "Disciplined", "desc": "Has a well-established personal code and follows it even when inconvenient."}, {"title": "Unwavering", "desc": "Rarely compromises personal principles, even when substantial sacrifices are required."}, {"title": "Absolute", "desc": "Follows a clearly defined personal code regardless of personal consequences, temptation, or external pressure."}];
+const goodness = [{"title": "Malevolent", "desc": "Deliberately seeks to cause harm, suffering, or destruction."}, {"title": "Cruel", "desc": "Readily harms, manipulates, or exploits others with little remorse."}, {"title": "Exploitative", "desc": "Consistently prioritizes personal gain over others’ welfare even when significant harm results."}, {"title": "Self-Serving", "desc": "Primarily concerned with personal interests but generally avoids unnecessary harm."}, {"title": "Indifferent", "desc": "Neither consistently prioritizes nor disregards the well-being of others."}, {"title": "Considerate", "desc": "Generally respects others’ welfare and helps when personal costs are reasonable."}, {"title": "Compassionate", "desc": "Actively helps others and prevents suffering, even when meaningful personal sacrifice is required."}, {"title": "Altruistic", "desc": "Consistently prioritizes others’ welfare and willingly accepts considerable personal sacrifice."}, {"title": "Selfless", "desc": "Demonstrates extraordinary commitment to others’ well-being, even at tremendous personal cost."}];
+const grid = document.getElementById('alignment-grid');
+const traditional = (x,y) => {
+  const a = x <= 3 ? 'Chaotic' : (x >= 7 ? 'Lawful' : 'Neutral');
+  const b = y <= 3 ? 'Evil' : (y >= 7 ? 'Good' : 'Neutral');
+  return a === 'Neutral' && b === 'Neutral' ? 'True Neutral' : `${a} ${b}`;
+};
+for (let y=9; y>=1; y--) {
+  for (let x=1; x<=9; x++) {
+    const cell=document.createElement('button');
+    cell.type='button'; cell.className='cell';
+    cell.dataset.x=String(x);cell.dataset.y=String(y);
+    cell.setAttribute('aria-label',`Lawfulness ${x}, Goodness ${y}: ${lawful[x-1].title} / ${goodness[y-1].title}, ${traditional(x,y)}`);
+    cell.setAttribute('aria-pressed','false');
+    cell.addEventListener('click',()=>select(x,y,true));
+    grid.appendChild(cell);
+  }
+}
+let current={x:5,y:5};
+function select(x,y,changeURL){
+ if(!Number.isInteger(x)||!Number.isInteger(y)||x<1||x>9||y<1||y>9)return;
+ current={x,y};
+ document.querySelectorAll('.cell.selected').forEach(el=>{el.classList.remove('selected');el.setAttribute('aria-pressed','false')});
+ const cell=grid.querySelector(`.cell[data-x="${x}"][data-y="${y}"]`);
+ if(cell){cell.classList.add('selected');cell.setAttribute('aria-pressed','true')}
+ document.getElementById('coordinates').textContent=`(${x}, ${y})`;
+ document.getElementById('labels').textContent=`${lawful[x-1].title} / ${goodness[y-1].title}`;
+ document.getElementById('traditional').textContent=traditional(x,y);
+ document.getElementById('lawful-title').textContent=`Lawfulness ${x} · ${lawful[x-1].title}`;
+ document.getElementById('lawful-desc').textContent=lawful[x-1].desc;
+ document.getElementById('good-title').textContent=`Goodness ${y} · ${goodness[y-1].title}`;
+ document.getElementById('good-desc').textContent=goodness[y-1].desc;
+ document.getElementById('share-status').textContent='';
+ if(changeURL&&history.replaceState){const url=new URL(location.href);url.searchParams.set('x',x);url.searchParams.set('y',y);history.replaceState(null,'',url)}
+}
+document.querySelectorAll('.example').forEach(el=>el.addEventListener('click',()=>{select(Number(el.dataset.x),Number(el.dataset.y),true);document.getElementById('explore').scrollIntoView({behavior:'smooth',block:'start'})}));
+const params=new URLSearchParams(location.search);const x=Number(params.get('x'));const y=Number(params.get('y'));
+select(Number.isInteger(x)&&x>=1&&x<=9?x:5,Number.isInteger(y)&&y>=1&&y<=9?y:5,false);
+document.getElementById('share').addEventListener('click',async()=>{
+ const url=new URL(location.href);url.searchParams.set('x',current.x);url.searchParams.set('y',current.y);
+ try { await navigator.clipboard.writeText(url.toString());document.getElementById('share-status').textContent='Link copied';}
+ catch { document.getElementById('share-status').textContent='Copy the URL from your address bar'; }
+});
+</script>
+</body>
+</html>
