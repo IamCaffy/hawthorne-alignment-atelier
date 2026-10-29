@@ -3,148 +3,64 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Hawthorne Guild house rules for Dungeons & Dragons 5e (2024 ruleset): combat, magic items, potions, and mounted combat.">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="House Rules | Hawthorne Guild">
-  <meta property="og:description" content="Read the Hawthorne Guild's D&D 5e (2024) house rules for combat, magic items, potions, and mounted combat.">
-  <meta property="og:url" content="https://iamcaffy.github.io/hawthorne-alignment-atelier/house-rules.html">
-  <link rel="canonical" href="https://iamcaffy.github.io/hawthorne-alignment-atelier/house-rules.html">
-  <title>House Rules | Hawthorne Guild</title>
+  <meta name="description" content="Hawthorne Guild house rules for Dungeons & Dragons 5e, 2024 ruleset.">
+  <meta property="og:title" content="Hawthorne Guild House Rules">
+  <meta property="og:description" content="A concise reference to the Hawthorne Guild's D&D 5e (2024) house rules.">
+  <title>Caffy's House Rules</title>
   <style>
-    :root { color-scheme: light; --ink:#203426; --deep:#1d3627; --green:#28533b; --gold:#927748; --border:#b8a276; --paper:#fff9e8 }
+    :root{color-scheme:light;--ink:#203426;--deep:#1d3627;--gold:#907b4c}
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;color:var(--ink);font:18px/1.65 Georgia,'Times New Roman',serif;background:#e8dfc7;background-image:radial-gradient(#fff7df 1px,transparent 1px);background-size:7px 7px}
-    main{width:min(920px,calc(100% - 36px));margin:40px auto;padding:48px clamp(22px,5vw,64px);border:4px double #907b4c;background:linear-gradient(145deg,#fff9e8,#f0e2c4);box-shadow:0 10px 30px #564a342b}
-    header{text-align:center;border-bottom:2px solid #aa925f;padding-bottom:24px}
-    .mark{font-size:32px;color:#8a6b37;line-height:1.1}
-    .eyebrow{font-size:13px;letter-spacing:.19em;text-transform:uppercase;color:#715d36;font-weight:bold;margin:12px 0 4px}
-    h1{font-size:clamp(34px,5vw,54px);line-height:1.09;margin:7px 0;color:var(--deep);font-variant:small-caps}
-    .subtitle{font-size:19px;margin:6px 0;color:#5e5137}
-    nav{display:flex;justify-content:center;gap:8px 20px;flex-wrap:wrap;margin-top:22px}
-    nav a{font-weight:bold;font-size:16px}
-    a{color:var(--green);text-underline-offset:3px}
-    a:hover{color:#142f20}
-    a:focus-visible{outline:2px solid #28533b;outline-offset:4px}
-    .intro{font-size:20px;line-height:1.5;text-align:center;max-width:650px;margin:24px auto 22px}
-    .notice{border:1px solid #ae9056;border-left:5px solid #8d713d;background:#f9edd2;padding:15px 19px;margin:28px 0 26px}
-    .notice p{margin:0}
-    .jump{font-size:15px;text-align:center;margin:20px auto 33px;color:#6b5b40}
-    .jump a{white-space:nowrap;font-weight:bold}
-    .jump span{padding:0 8px;color:#ae9161}
-    section{scroll-margin-top:20px;margin:31px 0 35px}
-    h2{font-variant:small-caps;color:#294830;font-size:clamp(25px,3vw,31px);margin:0 0 11px;line-height:1.2;display:flex;align-items:center;gap:12px}
-    h2:after{content:"";height:1px;flex:1;background:#c1aa80}
-    .rule{background:#faf1dc;border:1px solid #c4ae83;padding:16px 20px;margin:13px 0}
-    .rule h3{font-size:20px;line-height:1.3;margin:0 0 7px;color:#254633}
-    .rule p{margin:0;line-height:1.58}
-    .rule + .rule{margin-top:10px}
-    .rule-note{font-size:16px;color:#65573d;margin:10px 0 0}
-    .potions{width:100%;border-collapse:collapse;margin-top:13px;background:#faf1dc;border:1px solid #c4ae83}
-    .potions th{text-align:left;background:#e8d9b6;color:#244532;font-size:16px}
-    .potions th,.potions td{padding:14px 16px;border-bottom:1px solid #c5b18b;vertical-align:top}
-    .potions td:first-child{width:37%;font-weight:bold;color:#244532}
-    .potions tr:last-child td{border-bottom:0}
-    .callout{margin:17px 0 0;padding:14px 18px;border-left:4px solid #927748;background:#f5e8c9}
-    .callout p{margin:0}
-    footer{border-top:1px solid #b6a078;margin-top:42px;padding-top:20px;text-align:center;font-size:15px}
-    footer p{margin:11px 0 0}
-    .footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:5px 18px}
-    @media(max-width:650px){
-      body{font-size:17px}
-      main{margin:15px auto;padding:25px 19px}
-      nav{gap:5px 14px}
-      nav a{font-size:15px}
-      .notice{padding:12px 14px}
-      .rule{padding:13px 14px}
-      .jump{line-height:2.1}
-      .potions th,.potions td{padding:11px 10px;font-size:15px}
-      .potions td:first-child{width:39%}
-    }
-    @media print{
-      body{background:#fff;font-size:12pt}
-      main{width:100%;margin:0;box-shadow:none;padding:20px;border:0;background:#fff}
-      nav,.jump{display:none}
-      section{break-inside:avoid}
-      .rule,.notice,.callout,.potions{background:#fff}
-      a{text-decoration:none;color:#203426}
-    }
+    body{margin:0;color:var(--ink);font:18px/1.62 Georgia,'Times New Roman',serif;background:#e8dfc7;background-image:radial-gradient(#fff7df 1px,transparent 1px);background-size:7px 7px}
+    main{width:min(800px,calc(100% - 32px));margin:38px auto;padding:38px clamp(24px,5vw,58px) 34px;border:4px double var(--gold);background:linear-gradient(145deg,#fff9e8,#f0e2c4);box-shadow:0 10px 30px #564a342b}
+    header{text-align:center;margin-bottom:25px}
+    .mark{font-size:27px;color:#8a6b37;line-height:1}
+    .eyebrow{margin:6px 0 2px;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#715d36;font-weight:bold}
+    h1{color:var(--deep);font-variant:small-caps;font-size:clamp(34px,5.6vw,52px);line-height:1.12;margin:5px 0}
+    .subtitle{font-size:18px;color:#5e5137;margin:6px 0}
+    .intro{margin:13px 0 0;color:#66553b;font-size:16px;font-style:italic}
+    .ornament{display:flex;align-items:center;gap:15px;justify-content:center;margin:21px auto 0;color:#8a6b37}
+    .ornament:before,.ornament:after{content:"";width: min(165px,34%);height:1px;background:#ab9261}
+    .rules p{margin:0 0 15px}
+    .rules strong{color:#254633}
+    .potions{margin: -5px 0 15px 22px;padding:0;list-style:none}
+    .potions li{margin:3px 0;position:relative;padding-left:15px}
+    .potions li:before{content:"✦";font-size:11px;color:#937443;position:absolute;top:4px;left:0}
+    footer{text-align:center;margin:24px 0 0;font-size:14px;color:#756344}
+    @media(max-width:640px){body{font-size:17px}main{margin:14px auto;padding:25px 20px 23px}.intro{font-size:15px}.potions{margin-left:7px}}
+    @media print{body{background:#fff;font-size:12pt}main{width:100%;margin:0;padding:10px 25px;border:0;box-shadow:none;background:#fff}.rules p{break-inside:avoid}footer{display:none}}
   </style>
 </head>
 <body>
 <main>
   <header>
     <div class="mark" aria-hidden="true">✥</div>
-    <p class="eyebrow">Hawthorne Guild · Adventurer's Reference</p>
+    <p class="eyebrow">Hawthorne Guild</p>
     <h1>House Rules</h1>
     <p class="subtitle">D&amp;D 5e — 2024 Ruleset</p>
-    <nav aria-label="Site navigation">
-      <a href="./">Home</a>
-      <a href="framework.html">Alignment Framework</a>
-      <a href="house-rules.html" aria-current="page">House Rules</a>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="support.html">Support</a>
-      <a href="terms.html">Terms</a>
-    </nav>
+    <p class="intro">These house rules supersede the standard rules where applicable.</p>
+    <div class="ornament" aria-hidden="true">✦</div>
   </header>
 
-  <div class="notice"><p><strong>Rules precedence.</strong> These house rules supersede the standard rules where applicable.</p></div>
-  <div class="jump" aria-label="On this page">
-    Jump to: <a href="#combat">Combat</a><span>✦</span><a href="#spells-and-magic-items">Spells &amp; Magic Items</a><span>✦</span><a href="#potions">Potions</a><span>✦</span><a href="#mounted-combat">Mounted Combat</a>
+  <div class="rules">
+    <p><strong>Flanking:</strong> A creature gains Advantage on melee attack rolls when an ally is directly opposite the target. Both attackers must be within melee reach, and a line between their centers must pass through the center of the target’s space.</p>
+
+    <p><strong>Silvery Barbs &amp; Black Sap.</strong> Neither is permitted.</p>
+
+    <p><strong>Silver Horn of Valhalla:</strong> Always use the 2024 rules, regardless of the item's listed version.</p>
+
+    <p><strong>Healing Potions:</strong></p>
+    <ul class="potions">
+      <li><strong>Drink (Action):</strong> Restore the maximum possible Hit Points.</li>
+      <li><strong>Drink (Bonus Action):</strong> Roll healing normally.</li>
+      <li><strong>Administer to Another (Action):</strong> Give a potion to a creature within 5 feet; roll healing normally.</li>
+    </ul>
+
+    <p><strong>Prone Mounts:</strong> When a mount becomes Prone, its rider is dismounted. The rider may use their Reaction to make a DC 15 Dexterity saving throw, landing on their feet without taking damage from the dismount. On a failure, or without using a Reaction, the rider lands Prone and takes normal falling damage if applicable.</p>
+
+    <p>Flying Mounts: A successful dismount does not negate any subsequent fall from altitude.</p>
   </div>
 
-  <section id="combat" aria-labelledby="combat-heading">
-    <h2 id="combat-heading">Combat</h2>
-    <article class="rule">
-      <h3>Flanking</h3>
-      <p>A creature gains <strong>Advantage</strong> on melee attack rolls against a target when an ally is positioned directly opposite it. Both attackers must be within melee reach, and a line connecting their centers must pass through the center of the target's space.</p>
-    </article>
-  </section>
-
-  <section id="spells-and-magic-items" aria-labelledby="magic-heading">
-    <h2 id="magic-heading">Spells &amp; Magic Items</h2>
-    <article class="rule">
-      <h3>Silvery Barbs</h3>
-      <p>This spell is not permitted.</p>
-    </article>
-    <article class="rule">
-      <h3>Black Sap</h3>
-      <p>This substance is not permitted.</p>
-    </article>
-    <article class="rule">
-      <h3>Silver Horn of Valhalla</h3>
-      <p>Always use the <strong>2024 rules</strong> for this magic item, regardless of whether a character possesses the 2014 or 2024 version.</p>
-    </article>
-  </section>
-
-  <section id="potions" aria-labelledby="potions-heading">
-    <h2 id="potions-heading">Potions</h2>
-    <table class="potions">
-      <thead><tr><th scope="col">Use</th><th scope="col">Effect</th></tr></thead>
-      <tbody>
-        <tr><td>Drink (Action)</td><td>Restore the <strong>maximum possible Hit Points</strong> from a healing potion.</td></tr>
-        <tr><td>Drink (Bonus Action)</td><td>Roll the potion's healing dice normally.</td></tr>
-        <tr><td>Administer to Another (Action)</td><td>Administer a potion to a creature within <strong>5 feet</strong>. Roll healing normally.</td></tr>
-      </tbody>
-    </table>
-  </section>
-
-  <section id="mounted-combat" aria-labelledby="mounted-heading">
-    <h2 id="mounted-heading">Mounted Combat</h2>
-    <article class="rule">
-      <h3>Falling from a Prone Mount</h3>
-      <p>When a mount becomes <strong>Prone</strong>, its rider is dismounted. The rider may use their <strong>Reaction</strong> to attempt a <strong>DC 15 Dexterity saving throw</strong>, landing on their feet without taking damage from the dismount.</p>
-      <p style="margin-top:12px">On a failure, or if no Reaction is used, the rider lands <strong>Prone</strong> and takes normal falling damage based on the distance fallen, if applicable.</p>
-    </article>
-    <div class="callout">
-      <p><strong>Flying Mounts:</strong> A successful dismount does not negate any subsequent fall from altitude.</p>
-    </div>
-  </section>
-
-  <footer>
-    <div class="footer-links"><a href="./">Home</a><a href="framework.html">Alignment Framework</a><a href="privacy.html">Privacy Policy</a><a href="support.html">Support &amp; Contact</a><a href="terms.html">Terms of Service</a></div>
-    <p>Hawthorne Guild · House Rules · D&amp;D 5e (2024)</p>
-  </footer>
+  <footer>✥ &nbsp; Hawthorne Guild &nbsp; ✥</footer>
 </main>
 </body>
 </html>
