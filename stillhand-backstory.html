@@ -1,170 +1,467 @@
 
-<h2>Dorrik "Stillhand" Deepvein — Backstory</h2>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description"
+        content="The story of Dorrik Stillhand Deepvein, a dwarven divination wizard of the Hawthorne Guild.">
+
+  <meta property="og:title"
+        content="Dorrik Stillhand Deepvein | Hawthorne Guild">
+
+  <meta property="og:description"
+        content="From the mines of Citadel Adbar to the mysteries of the stars, discover the story of Dorrik Stillhand Deepvein.">
+
+  <title>Dorrik "Stillhand" Deepvein | Hawthorne Guild</title>
+
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #203426;
+      --deep: #1d3627;
+      --gold: #907b4c;
+      --muted: #66553b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font: 18px/1.72 Georgia, 'Times New Roman', serif;
+      background: #e8dfc7;
+      background-image:
+        radial-gradient(#fff7df 1px, transparent 1px);
+      background-size: 7px 7px;
+    }
+
+    main {
+      width: min(800px, calc(100% - 32px));
+      margin: 38px auto;
+      padding: 38px clamp(24px, 5vw, 58px) 34px;
+      border: 4px double var(--gold);
+      background: linear-gradient(
+        145deg,
+        #fff9e8,
+        #f0e2c4
+      );
+      box-shadow: 0 10px 30px #564a342b;
+    }
+
+    /* Page header */
+
+    header {
+      text-align: center;
+      margin-bottom: 34px;
+    }
+
+    .mark {
+      font-size: 27px;
+      color: #8a6b37;
+      line-height: 1;
+    }
+
+    .eyebrow {
+      margin: 6px 0 2px;
+      font-size: 13px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: #715d36;
+      font-weight: bold;
+    }
+
+    h1 {
+      color: var(--deep);
+      font-variant: small-caps;
+      font-size: clamp(34px, 5.6vw, 52px);
+      line-height: 1.12;
+      margin: 8px 0;
+    }
+
+    .subtitle {
+      font-size: 19px;
+      color: #5e5137;
+      margin: 8px 0;
+    }
+
+    .intro {
+      margin: 13px 0 0;
+      color: var(--muted);
+      font-size: 16px;
+      font-style: italic;
+    }
+
+    .ornament {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      justify-content: center;
+      margin: 24px auto 0;
+      color: #8a6b37;
+    }
+
+    .ornament::before,
+    .ornament::after {
+      content: "";
+      width: min(165px, 34%);
+      height: 1px;
+      background: #ab9261;
+    }
+
+    /* Backstory */
+
+    .story {
+      text-align: left;
+    }
+
+    .story section {
+      margin-bottom: 32px;
+    }
+
+    .story h2 {
+      color: var(--deep);
+      font-variant: small-caps;
+      font-size: 27px;
+      line-height: 1.25;
+      text-align: center;
+      margin: 38px 0 20px;
+      font-weight: bold;
+    }
+
+    .story h2::after {
+      content: "✦";
+      display: block;
+      font-size: 12px;
+      color: var(--gold);
+      margin-top: 10px;
+      font-variant: normal;
+    }
+
+    .story p {
+      margin: 0 0 17px;
+    }
+
+    .story strong {
+      color: #254633;
+      font-weight: bold;
+    }
+
+    .story em {
+      color: #68563b;
+    }
+
+    .story .emphasis {
+      font-style: italic;
+      text-align: center;
+      margin: 23px auto;
+      color: #715d36;
+    }
+
+    .story .closing {
+      text-align: center;
+      font-style: italic;
+      color: var(--deep);
+      font-size: 19px;
+      margin: 26px 0;
+    }
+
+    /* Footer */
+
+    footer {
+      text-align: center;
+      margin: 30px 0 0;
+      padding-top: 15px;
+      font-size: 14px;
+      color: #756344;
+      border-top: 1px solid #c5ae80;
+    }
+
+    /* Mobile */
+
+    @media (max-width: 640px) {
+      body {
+        font-size: 17px;
+      }
+
+      main {
+        margin: 14px auto;
+        padding: 25px 20px 23px;
+      }
+
+      .intro {
+        font-size: 15px;
+      }
+
+      .story h2 {
+        font-size: 24px;
+        margin-top: 30px;
+      }
+
+      .story section {
+        margin-bottom: 24px;
+      }
+    }
 
-<h3>The Deepvein Way</h3>
+    /* Print */
 
-<p>Dorrik Deepvein was born in 1422 DR in Deepvein Hold, one of the old dwarven delves tied to Citadel Adbar. His clan had worked the stone for generations. Deepveins were miners, surveyors, tunnelers, and stone-readers, the sort of dwarves who could look at a wall of rock and tell you whether it held iron, silver, water, or trouble. Among them, hard work was not merely a necessity. It was a virtue.</p>
+    @media print {
+      body {
+        background: #fff;
+        font-size: 12pt;
+      }
 
-<p>From a very young age, Dorrik appeared determined to challenge that virtue.</p>
+      main {
+        width: 100%;
+        margin: 0;
+        padding: 10px 25px;
+        border: 0;
+        box-shadow: none;
+        background: #fff;
+      }
 
-<p>He was not weak, nor sickly, nor particularly incapable. In fact, by dwarven standards he grew into a sturdy child with broad shoulders and strong hands. The problem was that he had almost no desire to use either of them.</p>
+      .story h2 {
+        break-after: avoid;
+      }
 
-<p>When other children were first taught how to carry ore baskets, Dorrik learned how to persuade someone else that carrying his basket as well would make the task go faster. When he was sent to fetch tools, some unforeseen complication often arose along the way. When asked why a chore remained unfinished, he could offer an explanation so reasonable that by the time he finished speaking, the adult questioning him occasionally wondered whether the chore had been worth doing in the first place.</p>
+      .story p {
+        orphans: 3;
+        widows: 3;
+      }
 
-<p>Sometimes he lied. More often, he simply arranged the truth into a shape that suited him.</p>
+      footer {
+        display: none;
+      }
+    }
+  </style>
+</head>
 
-<p>His family alternated between frustration and reluctant amusement. Dorrik was clearly clever, but Deepveins had little use for cleverness that left the pickaxe resting against the wall.</p>
+<body>
+<main>
 
-<h3>The Weight of a Family Name</h3>
+  <header>
+    <div class="mark" aria-hidden="true">✥</div>
 
-<p>Among the relatives who struggled to make sense of Dorrik was his father's brother, <strong>Bromrik Deepvein</strong>, whom he had called Uncle Bromrik for as long as he could remember.</p>
+    <p class="eyebrow">Hawthorne Guild</p>
 
-<p>Bromrik was the son of <strong>Captain Brynna Deepvein, known as the Captain of the Last Bell</strong>, a distinguished figure in the clan's history and Dorrik's paternal grandmother. Her name carried a legacy of courage and duty, qualities that Clan Deepvein had always regarded with considerable pride.</p>
+    <h1>Dorrik "Stillhand" Deepvein</h1>
 
-<p>Bromrik was everything a Deepvein miner was expected to be: strong, capable, practical, and stubbornly devoted to his work. He possessed a blunt honesty that made him particularly resistant to Dorrik's more imaginative excuses. Where others might become entangled in the boy's elaborate explanations, Bromrik simply crossed his arms, listened patiently, and told him to pick up the shovel.</p>
+    <p class="subtitle">
+      A Dwarven Scholar of Stone and Stars
+    </p>
 
-<p>Yet beneath his gruff exterior, Bromrik had a genuine affection for his troublesome young nephew. He considered Dorrik lazy beyond reason, but never stupid. In fact, he suspected the boy possessed an unusual brilliance that the mines simply had no use for. Bromrik would never have admitted it openly, but he occasionally found himself defending Dorrik against those who dismissed him as worthless.</p>
+    <p class="intro">
+      The story of a dwarf who discovered that
+      the greatest treasures were not always
+      found beneath the earth.
+    </p>
 
-<p>Dorrik, for his part, loved his uncle dearly, although he considered Bromrik's devotion to hard labor a tragic misuse of an otherwise excellent mind. Their disagreements were frequent, their affection rarely spoken, and neither ever succeeded in convincing the other that he had chosen the better way to live.</p>
+    <div class="ornament" aria-hidden="true">✦</div>
+  </header>
 
-<p>Despite Bromrik's occasional interventions, Dorrik became adept at avoiding the mines for as long as possible. Inevitably, however, the day came when persuasion failed and his family brought him below in earnest.</p>
+  <article class="story">
 
-<h3>A Different Kind of Miner</h3>
+    <section>
+      <h2>The Deepvein Way</h2>
 
-<p>Dorrik hated it.</p>
+      <p>Dorrik Deepvein was born in 1422 DR in Deepvein Hold, one of the old dwarven delves tied to Citadel Adbar. His clan had worked the stone for generations. Deepveins were miners, surveyors, tunnelers, and stone-readers, the sort of dwarves who could look at a wall of rock and tell you whether it held iron, silver, water, or trouble. Among them, hard work was not merely a necessity. It was a virtue.</p>
 
-<p>He hated the dust that settled into his beard, the heat of the deeper galleries, the endless noise of metal striking stone, and most of all the aching certainty that tomorrow would bring more of the same.</p>
+      <p>From a very young age, Dorrik appeared determined to challenge that virtue.</p>
 
-<p>Yet the mines gave him something important despite himself. His clan taught him how to recognize patterns. A slight change in the grain of stone could reveal a hidden fault. A streak of mineral could announce a vein long before the ore itself appeared. Water followed channels. Stone remembered pressure. The earth gave signs to those patient enough to read them.</p>
+      <p>He was not weak, nor sickly, nor particularly incapable. In fact, by dwarven standards he grew into a sturdy child with broad shoulders and strong hands. The problem was that he had almost no desire to use either of them.</p>
 
-<p>Dorrik simply became interested in a different set of signs.</p>
+      <p>When other children were first taught how to carry ore baskets, Dorrik learned how to persuade someone else that carrying his basket as well would make the task go faster. When he was sent to fetch tools, some unforeseen complication often arose along the way. When asked why a chore remained unfinished, he could offer an explanation so reasonable that by the time he finished speaking, the adult questioning him occasionally wondered whether the chore had been worth doing in the first place.</p>
 
-<h3>The Sky Above the Stone</h3>
+      <p>Sometimes he lied. More often, he simply arranged the truth into a shape that suited him.</p>
 
-<p>He had always liked the surface more than most of his kin, particularly at night. Above Deepvein Hold, the sky possessed a depth no mine shaft could rival.</p>
+      <p>His family alternated between frustration and reluctant amusement. Dorrik was clearly clever, but Deepveins had little use for cleverness that left the pickaxe resting against the wall.</p>
+    </section>
 
-<p>Dorrik began spending longer and longer periods outside beneath it, lying on stone warmed by the day and watching the heavens move. The stars seemed to him like lights buried in a greater darkness, not entirely unlike crystals sparkling in the rock. But unlike the veins his family pursued downward, these patterns stretched beyond mountains, kingdoms, and perhaps even the world itself.</p>
+    <section>
+      <h2>The Weight of a Family Name</h2>
 
-<p>The miners of Clan Deepvein searched beneath their feet for things hidden in stone. Dorrik began to suspect he had inherited their instinct after all. He had simply turned it upward.</p>
+      <p>Among the relatives who struggled to make sense of Dorrik was his father's brother, <strong>Bromrik Deepvein</strong>, whom he had called Uncle Bromrik for as long as he could remember.</p>
 
-<h3>A Scholar and a Doorway</h3>
+      <p>Bromrik was the son of <strong>Captain Brynna Deepvein, known as the Captain of the Last Bell</strong>, a distinguished figure in the clan's history and Dorrik's paternal grandmother. Her name carried a legacy of courage and duty, qualities that Clan Deepvein had always regarded with considerable pride.</p>
 
-<p>His fascination might have remained an eccentric pastime if not for <strong>Maela Starquill</strong>.</p>
+      <p>Bromrik was everything a Deepvein miner was expected to be: strong, capable, practical, and stubbornly devoted to his work. He possessed a blunt honesty that made him particularly resistant to Dorrik's more imaginative excuses. Where others might become entangled in the boy's elaborate explanations, Bromrik simply crossed his arms, listened patiently, and told him to pick up the shovel.</p>
 
-<p>Maela was a half-elven traveler and scholar who passed through Citadel Adbar during Dorrik's youth. She stayed only a short while, but to Dorrik she seemed to carry an entire world with her.</p>
+      <p>Yet beneath his gruff exterior, Bromrik had a genuine affection for his troublesome young nephew. He considered Dorrik lazy beyond reason, but never stupid. In fact, he suspected the boy possessed an unusual brilliance that the mines simply had no use for. Bromrik would never have admitted it openly, but he occasionally found himself defending Dorrik against those who dismissed him as worthless.</p>
 
-<p>Among her belongings were celestial charts unlike anything he had seen, notes concerning planetary motion, old records of eclipses, and references to magical traditions that treated the observation of distant things as more than idle curiosity.</p>
+      <p>Dorrik, for his part, loved his uncle dearly, although he considered Bromrik's devotion to hard labor a tragic misuse of an otherwise excellent mind. Their disagreements were frequent, their affection rarely spoken, and neither ever succeeded in convincing the other that he had chosen the better way to live.</p>
 
-<p>For perhaps the first time in his life, an outsider looked at Dorrik's endless questions about the heavens and did not tell him he ought to be doing something useful instead.</p>
+      <p>Despite Bromrik's occasional interventions, Dorrik became adept at avoiding the mines for as long as possible. Inevitably, however, the day came when persuasion failed and his family brought him below in earnest.</p>
+    </section>
 
-<p>Maela showed him that there were scholars who studied such matters seriously. She spoke to him of wizards who sought patterns in chance itself, of diviners who learned to glimpse possibilities before they became events, and of ancient astronomers who believed the movements of the heavens reflected deeper structures within creation.</p>
+    <section>
+      <h2>A Different Kind of Miner</h2>
 
-<p>Dorrik was fascinated. There was also the revelation that wizardry could accomplish an extraordinary number of things without requiring much physical exertion.</p>
+      <p>Dorrik hated it.</p>
 
-<p>That helped.</p>
+      <p>He hated the dust that settled into his beard, the heat of the deeper galleries, the endless noise of metal striking stone, and most of all the aching certainty that tomorrow would bring more of the same.</p>
 
-<p>After Maela moved on, Dorrik's relationship with his family's expectations became increasingly strained. He continued helping when he could no longer talk his way out of it, but his attention wandered elsewhere. He collected scraps of old lore. He studied histories and maps. He copied celestial observations whenever he could find them and began making his own.</p>
+      <p>Yet the mines gave him something important despite himself. His clan taught him how to recognize patterns. A slight change in the grain of stone could reveal a hidden fault. A streak of mineral could announce a vein long before the ore itself appeared. Water followed channels. Stone remembered pressure. The earth gave signs to those patient enough to read them.</p>
 
-<p>His family had taught him patience, even if they had intended that patience to be used while following a seam of ore. Dorrik discovered he could sit beneath the sky for hours without complaint.</p>
+      <p>Dorrik simply became interested in a different set of signs.</p>
+    </section>
 
-<p>That irony was not lost on anyone.</p>
+    <section>
+      <h2>The Sky Above the Stone</h2>
 
-<h3>The Name Stillhand</h3>
+      <p>He had always liked the surface more than most of his kin, particularly at night. Above Deepvein Hold, the sky possessed a depth no mine shaft could rival.</p>
 
-<p>Somewhere during these years the name <strong>Stillhand</strong> began following him.</p>
+      <p>Dorrik began spending longer and longer periods outside beneath it, lying on stone warmed by the day and watching the heavens move. The stars seemed to him like lights buried in a greater darkness, not entirely unlike crystals sparkling in the rock. But unlike the veins his family pursued downward, these patterns stretched beyond mountains, kingdoms, and perhaps even the world itself.</p>
 
-<p>At first it was mockery. While others worked, Dorrik's hands had an uncanny tendency to remain clean. A cousin might call across a worksite, "Stillhand has found another important reason not to lift anything," and laughter would follow.</p>
+      <p>The miners of Clan Deepvein searched beneath their feet for things hidden in stone. Dorrik began to suspect he had inherited their instinct after all. He had simply turned it upward.</p>
+    </section>
 
-<p>Dorrik accepted the name cheerfully enough. He had never considered unnecessary exertion a virtue merely because everyone else did.</p>
+    <section>
+      <h2>A Scholar and a Doorway</h2>
 
-<p>As he grew older, however, the meaning began to change. Stillhand became the dwarf who watched before acting. The dwarf who noticed things. The dwarf who might spend an hour thinking about a problem and then solve it in a minute.</p>
+      <p>His fascination might have remained an eccentric pastime if not for <strong>Maela Starquill</strong>.</p>
 
-<p>Dorrik eventually came to believe that the distinction between laziness and efficiency was largely determined by whether the idea worked.</p>
+      <p>Maela was a half-elven traveler and scholar who passed through Citadel Adbar during Dorrik's youth. She stayed only a short while, but to Dorrik she seemed to carry an entire world with her.</p>
 
-<h3>Reading the Patterns of Creation</h3>
+      <p>Among her belongings were celestial charts unlike anything he had seen, notes concerning planetary motion, old records of eclipses, and references to magical traditions that treated the observation of distant things as more than idle curiosity.</p>
 
-<p>His studies led him gradually toward wizardry and, eventually, divination.</p>
+      <p>For perhaps the first time in his life, an outsider looked at Dorrik's endless questions about the heavens and did not tell him he ought to be doing something useful instead.</p>
 
-<p>Magic appealed to him not merely because it was powerful but because it rewarded precisely the qualities his childhood had cultivated: attention, patience, memory, and the ability to recognize connections that others overlooked.</p>
+      <p>Maela showed him that there were scholars who studied such matters seriously. She spoke to him of wizards who sought patterns in chance itself, of diviners who learned to glimpse possibilities before they became events, and of ancient astronomers who believed the movements of the heavens reflected deeper structures within creation.</p>
 
-<p>He became particularly fascinated by the possibility that chance itself might possess patterns. The stars did not command the future, at least not in the simplistic way fortune-tellers sometimes claimed. Dorrik came to think of them instead as part of an enormous celestial order.</p>
+      <p>Dorrik was fascinated. There was also the revelation that wizardry could accomplish an extraordinary number of things without requiring much physical exertion.</p>
 
-<p>The stone beneath the world and the heavens above it were not opposites but expressions of the same creation. His ancestors had learned to read one. He would learn to read the other.</p>
+      <p class="emphasis">That helped.</p>
 
-<p>This became the closest thing Dorrik possessed to a formal faith. He respected the gods and had no particular quarrel with temples or priests, but he never felt compelled to devote himself entirely to one divine name.</p>
+      <p>After Maela moved on, Dorrik's relationship with his family's expectations became increasingly strained. He continued helping when he could no longer talk his way out of it, but his attention wandered elsewhere. He collected scraps of old lore. He studied histories and maps. He copied celestial observations whenever he could find them and began making his own.</p>
 
-<p>He believed there was an order larger than any single deity, kingdom, clan, or mortal life. The movement of stars, the slow rhythms of worlds, the recurrence of seasons and conjunctions, the strange ways probabilities sometimes gathered around a moment—all seemed to him glimpses of something immense.</p>
+      <p>His family had taught him patience, even if they had intended that patience to be used while following a seam of ore. Dorrik discovered he could sit beneath the sky for hours without complaint.</p>
 
-<p>He called it, when pressed to give it a name, <strong>the Deep and the Sky</strong>.</p>
+      <p>That irony was not lost on anyone.</p>
+    </section>
 
-<h3>An Expensive Lesson in Literacy</h3>
+    <section>
+      <h2>The Name Stillhand</h2>
 
-<p>In time Dorrik traveled beyond the familiar holds of his youth. His ability to talk his way through difficulties proved nearly as useful as his magic.</p>
+      <p>Somewhere during these years the name <strong>Stillhand</strong> began following him.</p>
 
-<p>He could be personable when he wished, convincingly reasonable when he needed to be, and remarkably flexible regarding the boundary between persuasion and deception. That particular talent earned him at least one lasting enemy.</p>
+      <p>At first it was mockery. While others worked, Dorrik's hands had an uncanny tendency to remain clean. A cousin might call across a worksite, "Stillhand has found another important reason not to lift anything," and laughter would follow.</p>
 
-<p><strong>Verrick Dane</strong> was a traveling merchant with whom Dorrik once conducted business in the Silver Marches. The precise details of their agreement depend greatly upon which of the two men is telling the story.</p>
+      <p>Dorrik accepted the name cheerfully enough. He had never considered unnecessary exertion a virtue merely because everyone else did.</p>
 
-<p>Verrick maintains that Dorrik deliberately concealed the true implications of their bargain and maneuvered him into a disastrous deal. Dorrik maintains that every relevant fact was available to a careful reader and that Verrick received an expensive but valuable lesson concerning contractual language.</p>
+      <p>As he grew older, however, the meaning began to change. Stillhand became the dwarf who watched before acting. The dwarf who noticed things. The dwarf who might spend an hour thinking about a problem and then solve it in a minute.</p>
 
-<p>Verrick calls it fraud.</p>
+      <p>Dorrik eventually came to believe that the distinction between laziness and efficiency was largely determined by whether the idea worked.</p>
+    </section>
 
-<p>Dorrik calls it literacy.</p>
+    <section>
+      <h2>Reading the Patterns of Creation</h2>
 
-<p>Neither has changed his opinion.</p>
+      <p>His studies led him gradually toward wizardry and, eventually, divination.</p>
 
-<h3>The Civilized Uses of Wizardry</h3>
+      <p>Magic appealed to him not merely because it was powerful but because it rewarded precisely the qualities his childhood had cultivated: attention, patience, memory, and the ability to recognize connections that others overlooked.</p>
 
-<p>As the decades passed, Dorrik became increasingly comfortable with the life he had chosen. His spellbook grew alongside his astronomical journals, until it became difficult to tell where one ended and the other began.</p>
+      <p>He became particularly fascinated by the possibility that chance itself might possess patterns. The stars did not command the future, at least not in the simplistic way fortune-tellers sometimes claimed. Dorrik came to think of them instead as part of an enormous celestial order.</p>
 
-<p>Magical formulae appeared beside sketches of constellations. Historical observations shared pages with predictions, questions, unfinished theories, and occasional reminders to purchase better tea.</p>
+      <p>The stone beneath the world and the heavens above it were not opposites but expressions of the same creation. His ancestors had learned to read one. He would learn to read the other.</p>
 
-<p>Even his practical magic reflected his temperament. Dorrik developed a particular affection for spells that allowed problems to be solved without unnecessary movement.</p>
+      <p>This became the closest thing Dorrik possessed to a formal faith. He respected the gods and had no particular quarrel with temples or priests, but he never felt compelled to devote himself entirely to one divine name.</p>
 
-<p><em>Mage Hand</em> saved countless trips across rooms. Unseen servants represented, in his opinion, one of wizardry's most civilized achievements.</p>
+      <p>He believed there was an order larger than any single deity, kingdom, clan, or mortal life. The movement of stars, the slow rhythms of worlds, the recurrence of seasons and conjunctions, the strange ways probabilities sometimes gathered around a moment—all seemed to him glimpses of something immense.</p>
 
-<p><em>Tenser's Floating Disk</em> liberated an intelligent person from the indignity of carrying luggage, although Dorrik remained deeply disappointed that the spell stubbornly refused to carry him as well.</p>
+      <p>He called it, when pressed to give it a name, <strong>the Deep and the Sky</strong>.</p>
+    </section>
 
-<p>The sight of Stillhand trudging unhappily down a road while an invisible force floated his belongings comfortably behind him became a familiar expression of the universe's sense of humor.</p>
+    <section>
+      <h2>An Expensive Lesson in Literacy</h2>
 
-<h3>The Call of Hawthorne</h3>
+      <p>In time Dorrik traveled beyond the familiar holds of his youth. His ability to talk his way through difficulties proved nearly as useful as his magic.</p>
 
-<p>Eventually, reports concerning the <strong>Hawthorne Guild</strong> reached him.</p>
+      <p>He could be personable when he wished, convincingly reasonable when he needed to be, and remarkably flexible regarding the boundary between persuasion and deception. That particular talent earned him at least one lasting enemy.</p>
 
-<p>To many adventurers, the story of the guild was one of courage: a settlement founded beside the Greypeak Mountains, the revelation of the primordial titan Bohu imprisoned within Split Tooth Mountain, the destruction of Lerwick, and the desperate struggle that followed.</p>
+      <p><strong>Verrick Dane</strong> was a traveling merchant with whom Dorrik once conducted business in the Silver Marches. The precise details of their agreement depend greatly upon which of the two men is telling the story.</p>
 
-<p>Dorrik heard something else in that story.</p>
+      <p>Verrick maintains that Dorrik deliberately concealed the true implications of their bargain and maneuvered him into a disastrous deal. Dorrik maintains that every relevant fact was available to a careful reader and that Verrick received an expensive but valuable lesson concerning contractual language.</p>
 
-<p>A being from the dawn of creation had slept inside a mountain. That fact alone occupied his thoughts for weeks.</p>
+      <p>Verrick calls it fraud.</p>
 
-<p>Here was precisely the intersection he had spent much of his life contemplating: ancient powers, stone, celestial history, prophecy, magic, and the possibility that the world contained structures far older than the civilizations living upon it.</p>
+      <p>Dorrik calls it literacy.</p>
 
-<p>Hawthorne's adventurers did not merely read about such things. They encountered them.</p>
+      <p>Neither has changed his opinion.</p>
+    </section>
 
-<p>The guild's new home interested him even more. Hawthorne possessed a university, an All-Faiths Temple, access to travelers from across Faerûn, and adventurers who returned with accounts of other planes.</p>
+    <section>
+      <h2>The Civilized Uses of Wizardry</h2>
 
-<p>Most impressively, the city possessed a permanent teleportation circle. Dorrik considered teleportation compelling evidence that civilization was, despite occasional setbacks, progressing in the correct direction.</p>
+      <p>As the decades passed, Dorrik became increasingly comfortable with the life he had chosen. His spellbook grew alongside his astronomical journals, until it became difficult to tell where one ended and the other began.</p>
 
-<h3>Choosing His Own Path</h3>
+      <p>Magical formulae appeared beside sketches of constellations. Historical observations shared pages with predictions, questions, unfinished theories, and occasional reminders to purchase better tea.</p>
 
-<p>By the time he arrived in Hawthorne, Stillhand was seventy-seven years old: mature enough to have accumulated habits that were unlikely ever to leave him, yet young enough by dwarven reckoning to have many years ahead.</p>
+      <p>Even his practical magic reflected his temperament. Dorrik developed a particular affection for spells that allowed problems to be solved without unnecessary movement.</p>
 
-<p>His hair and full beard had begun to silver among the dark chestnut brown, and his broad Deepvein frame had grown somewhat softer with a life dedicated more to contemplation than mining. His hazel eyes still brightened, however, whenever conversation turned toward ancient mysteries or the heavens.</p>
+      <p><em>Mage Hand</em> saved countless trips across rooms. Unseen servants represented, in his opinion, one of wizardry's most civilized achievements.</p>
 
-<p>At Hawthorne University he found at least one congenial academic acquaintance in <strong>Professor Kingsley</strong>, a scholar who appreciated Stillhand's knowledge of celestial patterns, divination, and old dwarven records and occasionally exchanged research or obscure references with him.</p>
+      <p><em>Tenser's Floating Disk</em> liberated an intelligent person from the indignity of carrying luggage, although Dorrik remained deeply disappointed that the spell stubbornly refused to carry him as well.</p>
 
-<p>Stillhand also discovered that Hawthorne's unusual tolerance suited him. It was a city full of people who had followed paths their ancestors might never have imagined, and he understood something about that.</p>
+      <p>The sight of Stillhand trudging unhappily down a road while an invisible force floated his belongings comfortably behind him became a familiar expression of the universe's sense of humor.</p>
+    </section>
 
-<p>Joining the Hawthorne Guild required commitments. Cooperation. Responsibility. The occasional possibility of strenuous travel.</p>
+    <section>
+      <h2>The Call of Hawthorne</h2>
 
-<p>Stillhand examined these disadvantages carefully.</p>
+      <p>Eventually, reports concerning the <strong>Hawthorne Guild</strong> reached him.</p>
 
-<p>Yet the guild offered access to mysteries that no observatory could provide, companions capable of handling the more physically demanding aspects of those mysteries, and the possibility of seeing strange corners of creation with his own eyes.</p>
+      <p>To many adventurers, the story of the guild was one of courage: a settlement founded beside the Greypeak Mountains, the revelation of the primordial titan Bohu imprisoned within Split Tooth Mountain, the destruction of Lerwick, and the desperate struggle that followed.</p>
 
-<p>He provided what the guild required for its emergency scrying, accepted its badge, and agreed to its code.</p>
+      <p>Dorrik heard something else in that story.</p>
 
-<p>Dorrik "Stillhand" Deepvein had spent much of his life finding clever ways to avoid going where others told him he ought to go.</p>
+      <p>A being from the dawn of creation had slept inside a mountain. That fact alone occupied his thoughts for weeks.</p>
 
-<p>Now, for perhaps the first time, he had chosen somewhere to go himself.</p>
+      <p>Here was precisely the intersection he had spent much of his life contemplating: ancient powers, stone, celestial history, prophecy, magic, and the possibility that the world contained structures far older than the civilizations living upon it.</p>
 
-<p><em>He only hoped it would not involve too much walking.</em></p>
+      <p>Hawthorne's adventurers did not merely read about such things. They encountered them.</p>
+
+      <p>The guild's new home interested him even more. Hawthorne possessed a university, an All-Faiths Temple, access to travelers from across Faerûn, and adventurers who returned with accounts of other planes.</p>
+
+      <p>Most impressively, the city possessed a permanent teleportation circle. Dorrik considered teleportation compelling evidence that civilization was, despite occasional setbacks, progressing in the correct direction.</p>
+    </section>
+
+    <section>
+      <h2>Choosing His Own Path</h2>
+
+      <p>By the time he arrived in Hawthorne, Stillhand was seventy-seven years old: mature enough to have accumulated habits that were unlikely ever to leave him, yet young enough by dwarven reckoning to have many years ahead.</p>
+
+      <p>His hair and full beard had begun to silver among the dark chestnut brown, and his broad Deepvein frame had grown somewhat softer with a life dedicated more to contemplation than mining. His hazel eyes still brightened, however, whenever conversation turned toward ancient mysteries or the heavens.</p>
+
+      <p>At Hawthorne University he found at least one congenial academic acquaintance in <strong>Professor Kingsley</strong>, a scholar who appreciated Stillhand's knowledge of celestial patterns, divination, and old dwarven records and occasionally exchanged research or obscure references with him.</p>
+
+      <p>Stillhand also discovered that Hawthorne's unusual tolerance suited him. It was a city full of people who had followed paths their ancestors might never have imagined, and he understood something about that.</p>
+
+      <p>Joining the Hawthorne Guild required commitments. Cooperation. Responsibility. The occasional possibility of strenuous travel.</p>
+
+      <p>Stillhand examined these disadvantages carefully.</p>
+
+      <p>Yet the guild offered access to mysteries that no observatory could provide, companions capable of handling the more physically demanding aspects of those mysteries, and the possibility of seeing strange corners of creation with his own eyes.</p>
+
+      <p>He provided what the guild required for its emergency scrying, accepted its badge, and agreed to its code.</p>
+
+      <p>Dorrik "Stillhand" Deepvein had spent much of his life finding clever ways to avoid going where others told him he ought to go.</p>
+
+      <p>Now, for perhaps the first time, he had chosen somewhere to go himself.</p>
+
+      <p class="closing">
+        He only hoped it would not involve too much walking.
+      </p>
+    </section>
+
+  </article>
+
+  <footer>
+    ✥ &nbsp; Hawthorne Guild &nbsp; ✥
+  </footer>
+
+</main>
+</body>
+</html>
